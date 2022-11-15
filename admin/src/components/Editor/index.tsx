@@ -19,7 +19,7 @@ import slate from '@react-page/plugins-slate';
 // import css1 from '@react-page/editor/lib/index.css';
 // import css2 from '@react-page/plugins-slate/lib/index.css';
 
-import cellPlugins from './plugins/defaultCellPlugins';
+import cellPlugins from './plugins/cellPlugins';
 
 const Wrapper = styled(Box)`
   h1 {
