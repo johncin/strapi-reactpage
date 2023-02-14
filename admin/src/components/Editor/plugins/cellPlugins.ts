@@ -30,8 +30,9 @@ import slate from '@react-page/plugins-slate';
 import '@react-page/plugins-slate/lib/index.css';
 
 import imageUploadService from './imageUploadService';
+// no-commit put custom plugin imports here
+// no-commit
 
-// customize your plugins here
 const cellPlugins: CellPluginList = [
   slate(),
   spacer,
@@ -44,6 +45,8 @@ const cellPlugins: CellPluginList = [
   background({
     imageUpload: imageUploadService(),
   }),
+  // no-commit put custom plugins here
+  // no-commit
 ];
 
 export default cellPlugins;

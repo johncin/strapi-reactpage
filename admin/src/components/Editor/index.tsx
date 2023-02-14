@@ -11,15 +11,93 @@ import {
   useTheme,
   darkTheme,
 } from '@strapi/design-system';
+import { Landscape, Cross } from '@strapi/icons';
 import { useIntl } from 'react-intl';
 import styled, { css } from 'styled-components';
-import { createTheme } from '@mui/material';
+import { createTheme, IconButton, Modal, Paper } from '@mui/material';
 import ReactPageEditor, { defaultThemeOptions } from '@react-page/editor';
 import slate from '@react-page/plugins-slate';
-// import css1 from '@react-page/editor/lib/index.css';
-// import css2 from '@react-page/plugins-slate/lib/index.css';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import css1 from '@react-page/editor/lib/index.css';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import css2 from '@react-page/plugins-slate/lib/index.css';
 
 import cellPlugins from './plugins/cellPlugins';
+import pluginId from '../../pluginId';
+import getTrad from '../../utils/getTrad';
+
+const reactPageDarkTheme = createTheme({
+  ...defaultThemeOptions,
+  palette: { mode: 'dark' },
+});
+
+const useIsDarkMode = () => {
+  const theme = useTheme();
+
+  return theme.colors.neutral0 === darkTheme.colors.neutral0;
+};
+
+const Editor = ({
+  name,
+  onChange,
+  value,
+  intlLabel,
+  disabled,
+  error,
+  description,
+  required,
+}) => {
+  const isDarkMode = useIsDarkMode();
+  const { formatMessage } = useIntl();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  // console.log('value', value.length);
+
+  // console.log('in Editor');
+  // console.log('css1', css1);
+  // console.log('css2', css2);
+
+  return (
+    <Wrapper isDarkMode={isDarkMode}>
+      <style>
+        {css1}
+        {css2}
+      </style>
+      <Stack spacing={1}>
+        <Box style={{ marginBottom: 2 }}>
+          {intlLabel && (
+            <Typography variant="pi" fontWeight="bold">
+              {formatMessage(intlLabel)}
+            </Typography>
+          )}
+          {required && (
+            <Typography variant="pi" fontWeight="bold" textColor="danger600">
+              *
+            </Typography>
+          )}
+        </Box>
+        <ReactPageEditor
+          uiTheme={isDarkMode ? reactPageDarkTheme : undefined}
+          sidebarPosition="rightRelative"
+          cellPlugins={cellPlugins}
+          value={JSON.parse(value)}
+          onChange={(data) => {
+            onChange({ target: { name, value: JSON.stringify(data) } });
+          }}
+        />
+        {error && (
+          <Typography variant="pi" textColor="danger600">
+            {formatMessage({ id: error, defaultMessage: error })}
+          </Typography>
+        )}
+        {description && (
+          <Typography variant="pi">{formatMessage(description)}</Typography>
+        )}
+      </Stack>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled(Box)`
   h1 {
@@ -57,7 +135,6 @@ const Wrapper = styled(Box)`
     }
   }
   margin-right: 50px;
-
   ${(p) =>
     p.isDarkMode
       ? css`
@@ -66,84 +143,11 @@ const Wrapper = styled(Box)`
       : null}
 `;
 
-const reactPageDarkTheme = createTheme({
-  ...defaultThemeOptions,
-  palette: { mode: 'dark' },
-});
-
-const useIsDarkMode = () => {
-  const theme = useTheme();
-
-  return theme.colors.neutral0 === darkTheme.colors.neutral0;
-};
-
-const Editor = ({
-  name,
-  onChange,
-  value,
-  intlLabel,
-  disabled,
-  error,
-  description,
-  required,
-}) => {
-  const isDarkMode = useIsDarkMode();
-  const { formatMessage } = useIntl();
-
-  return (
-    <Wrapper isDarkMode={isDarkMode}>
-      {/* <style>
-        {css1}
-        {css2}
-      </style> */}
-      <Stack spacing={1}>
-        <Box style={{ marginBottom: 2 }}>
-          <Typography variant="pi" fontWeight="bold">
-            {formatMessage(intlLabel)}
-          </Typography>
-          {required && (
-            <Typography variant="pi" fontWeight="bold" textColor="danger600">
-              *
-            </Typography>
-          )}
-        </Box>
-        {/* <Button
-          startIcon={<Landscape />}
-          variant="secondary"
-          fullWidth
-          onClick={() => {
-            setIsModalOpen(true);
-          }}
-        >
-          Open editor
-        </Button> */}
-        <ReactPageEditor
-          uiTheme={isDarkMode ? reactPageDarkTheme : undefined}
-          sidebarPosition="rightRelative"
-          cellPlugins={cellPlugins}
-          value={JSON.parse(value)}
-          onChange={(data) => {
-            onChange({ target: { name, value: JSON.stringify(data) } });
-          }}
-        />
-        {error && (
-          <Typography variant="pi" textColor="danger600">
-            {formatMessage({ id: error, defaultMessage: error })}
-          </Typography>
-        )}
-        {description && (
-          <Typography variant="pi">{formatMessage(description)}</Typography>
-        )}
-      </Stack>
-    </Wrapper>
-  );
-};
-
 Editor.defaultProps = {
-  description: '',
+  description: undefined,
   disabled: false,
   error: undefined,
-  intlLabel: '',
+  intlLabel: undefined,
   name: '',
   onChange: () => {},
   required: false,
@@ -164,7 +168,7 @@ Editor.propTypes = {
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   required: PropTypes.bool,
-  value: PropTypes.object,
+  value: PropTypes.string,
 };
 
 export default Editor;

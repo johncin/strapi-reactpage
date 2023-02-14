@@ -5,6 +5,7 @@ import pluginId from './pluginId';
 import Initializer from './components/Initializer';
 import PluginIcon from './components/PluginIcon';
 import Editor from './components/Editor';
+import getTrad from './utils/getTrad';
 
 export default {
   register(app) {
@@ -12,38 +13,47 @@ export default {
     const pluginDescription =
       pluginPkg.strapi.description || pluginPkg.description;
 
-    const plugin = {
-      blockerComponent: null,
-      blockerComponentProps: {},
-      description: pluginDescription,
-      intlLabel: {
-        id: pluginId,
-        defaultMessage: pluginId,
-      },
-      id: pluginId,
-      initializer: Initializer,
-      isReady: true,
-      name,
-    };
-
-    app.registerPlugin(plugin);
-
     app.customFields.register({
       name,
       pluginId,
-      type: 'json',
+      icon: PluginIcon,
+      type: 'richtext',
       intlLabel: {
-        id: pluginId,
+        id: getTrad('reactpage.label'),
         defaultMessage: pluginId,
       },
       intlDescription: {
-        id: pluginId,
+        id: getTrad('reactpage.description'),
         defaultMessage: pluginDescription,
       },
       components: {
-        Input: async () => import('./components/Editor/index'),
+        Input: async () =>
+          import(
+            /* webpackChunkName: "input-component" */ './components/Editor'
+          ),
       },
     });
   },
   bootstrap(app) {},
+  async registerTrads({ locales }) {
+    const importedTrads = await Promise.all(
+      locales.map((locale) => {
+        return import(`./translations/${locale}.json`)
+          .then(({ default: data }) => {
+            return {
+              data: prefixPluginTranslations(data, pluginId),
+              locale,
+            };
+          })
+          .catch(() => {
+            return {
+              data: {},
+              locale,
+            };
+          });
+      })
+    );
+
+    return Promise.resolve(importedTrads);
+  },
 };

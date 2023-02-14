@@ -1,1 +1,5 @@
-{}
+{
+  "reactpage.label": "ReactPage",
+  "reactpage.description": "An advanced input field using Reactpage",
+  "reactpage.modal.close.label": "Close the editor modal"
+}

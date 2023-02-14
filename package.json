@@ -1,10 +1,11 @@
 {
   "name": "strapi-reactpage",
   "version": "0.0.0",
-  "description": "This is the description of the plugin.",
+  "description": "Strapi plugin that adds a custom field with the wysiwyg editor with Reactpage.",
   "strapi": {
-    "name": "strapi-reactpage",
-    "description": "Description of strapi-reactpage plugin",
+    "name": "reactpage",
+    "displayName": "ReactPage",
+    "description": "An advanced input field using Reactpage",
     "kind": "plugin"
   },
   "scripts": {
@@ -13,40 +14,49 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "npx eslint"
+    "**/*": "prettier --write --ignore-unknown",
+    "*.{js,jsx,ts,tsx}": "npx eslint --debug"
   },
   "dependencies": {
-    "@emotion/styled": "^11.10.5",
-    "@mui/material": "^5.10.13",
-    "@react-page/editor": "^5.2.0",
-    "@react-page/plugins-background": "^5.2.0",
-    "@react-page/plugins-divider": "^5.2.0",
-    "@react-page/plugins-html5-video": "^5.2.0",
-    "@react-page/plugins-image": "^5.2.0",
-    "@react-page/plugins-slate": "^5.2.0",
-    "@react-page/plugins-spacer": "^5.2.0",
-    "@react-page/plugins-video": "^5.2.0",
+    "@emotion/styled": "11.6.0",
+    "@mui/material": "^5.11.8",
+    "@react-page/editor": "^5.4.2",
+    "@react-page/plugins-background": "^5.4.2",
+    "@react-page/plugins-divider": "^5.4.2",
+    "@react-page/plugins-html5-video": "^5.4.2",
+    "@react-page/plugins-image": "^5.4.2",
+    "@react-page/plugins-slate": "^5.4.2",
+    "@react-page/plugins-spacer": "^5.4.2",
+    "@react-page/plugins-video": "^5.4.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-modal": "^3.16.1",
     "styled-components": "^5.3.6",
     "uniforms": "3.10.1"
   },
   "devDependencies": {
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.2",
+    "@types/styled-components": "^5.1.26",
     "husky": "^8.0.0",
     "lint-staged": "^13.1.1",
     "typescript": "4.6.3"
   },
+  "peerDependencies": {
+    "@emotion/react": "11.6.0",
+    "@strapi/strapi": "^4.6.1"
+  },
   "author": {
-    "name": "A Strapi developer"
+    "name": "johncin"
   },
   "maintainers": [
     {
-      "name": "A Strapi developer"
+      "name": "johncin"
     }
   ],
   "engines": {
     "node": ">=14.19.1 <=18.x.x",
     "npm": ">=6.0.0"
   },
-
   "license": "MIT"
 }
