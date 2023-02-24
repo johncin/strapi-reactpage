@@ -28,6 +28,25 @@ import cellPlugins from './plugins/cellPlugins';
 import pluginId from '../../pluginId';
 import getTrad from '../../utils/getTrad';
 
+const LANGUAGES = [
+  {
+    lang: 'de',
+    label: 'Deutsch',
+  },
+  {
+    lang: 'en',
+    label: 'English',
+  },
+  {
+    lang: 'fr',
+    label: 'French',
+  },
+  {
+    lang: 'se',
+    label: 'Svenska',
+  },
+];
+
 const reactPageDarkTheme = createTheme({
   ...defaultThemeOptions,
   palette: { mode: 'dark' },
@@ -40,6 +59,7 @@ const useIsDarkMode = () => {
 };
 
 const Editor = ({
+  attribute,
   name,
   onChange,
   value,
@@ -52,11 +72,7 @@ const Editor = ({
   const isDarkMode = useIsDarkMode();
   const { formatMessage } = useIntl();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  // console.log('value', value.length);
-
-  // console.log('in Editor');
-  // console.log('css1', css1);
-  // console.log('css2', css2);
+  const lang = attribute.options?.advanced?.lang ?? 'default';
 
   return (
     <Wrapper isDarkMode={isDarkMode}>
@@ -80,6 +96,8 @@ const Editor = ({
         <ReactPageEditor
           uiTheme={isDarkMode ? reactPageDarkTheme : undefined}
           sidebarPosition="rightRelative"
+          lang={lang}
+          languages={LANGUAGES}
           cellPlugins={cellPlugins}
           value={JSON.parse(value)}
           onChange={(data) => {
@@ -155,6 +173,7 @@ Editor.defaultProps = {
 };
 
 Editor.propTypes = {
+  attribute: PropTypes.object.isRequired,
   description: PropTypes.shape({
     id: PropTypes.string,
     defaultMessage: PropTypes.string,

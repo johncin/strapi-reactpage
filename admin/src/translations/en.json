@@ -1,5 +1,9 @@
 {
   "reactpage.label": "ReactPage",
   "reactpage.description": "An advanced input field using Reactpage",
-  "reactpage.modal.close.label": "Close the editor modal"
+  "reactpage.modal.close.label": "Close the editor modal",
+  "reactpage.options.advanced.requiredField": "Required field",
+  "reactpage.options.advanced.requiredField.description": "You won't be able to create an entry if this field is empty",
+  "reactpage.options.advanced.lang": "Editor language",
+  "reactpage.options.advanced.lang.description": "Language setting for the Editor component"
 }

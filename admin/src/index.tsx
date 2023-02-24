@@ -32,6 +32,37 @@ export default {
             /* webpackChunkName: "input-component" */ './components/Editor'
           ),
       },
+      options: {
+        advanced: [
+          {
+            name: 'options.advanced.requiredField',
+            type: 'checkbox',
+            description: {
+              id: getTrad(
+                'reactpage.options.advanced.requiredField.description'
+              ),
+              defaultMessage:
+                "You won't be able to create an entry if this field is empty",
+            },
+            intlLabel: {
+              id: getTrad('reactpage.options.advanced.requiredField'),
+              defaultMessage: 'Required field',
+            },
+          },
+          {
+            name: 'options.advanced.lang',
+            type: 'text',
+            description: {
+              id: getTrad('reactpage.options.advanced.lang.description'),
+              defaultMessage: 'Language setting for the Editor component',
+            },
+            intlLabel: {
+              id: getTrad('reactpage.options.advanced.lang'),
+              defaultMessage: 'Editor language',
+            },
+          },
+        ],
+      },
     });
   },
   bootstrap(app) {},
