@@ -4,7 +4,6 @@
 for file in $(git diff --cached --name-only | grep -E '\.(js|jsx|ts|tsx)$')
 do
   res=$(echo "$(git show ":$file" | sed -n '/no-commit/,/no-commit/p' | grep -vo --count 'no-commit' || true)")
-  echo "$res"
   if [[ "$res" -ne 0 ]]; then
     echo "Pre-commit error: Line(s) that should not be commited were detected in file '$file'"
     exit 1 # exit with failure status
