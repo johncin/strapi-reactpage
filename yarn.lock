@@ -384,10 +384,10 @@
   resolved "https://registry.yarnpkg.com/@react-dnd/shallowequal/-/shallowequal-3.0.1.tgz#8056fe046a8d10a275e321ec0557ae652d7a4d06"
   integrity sha512-XjDVbs3ZU16CO1h5Q3Ew2RPJqmZBDE/EVf1LYp6ePEffs3V/MX9ZbL5bJr8qiK5SbGmUMuDoaFgyKacYz8prRA==
 
-"@react-page/editor@^5.4.2":
-  version "5.4.2"
-  resolved "https://registry.yarnpkg.com/@react-page/editor/-/editor-5.4.2.tgz#056faae3b44ab86ff1f28683d44a8d1f92db511a"
-  integrity sha512-Batna/vUesOt6BY5ioEyekuO0KoxHD21wX0D0s3v1CfFipbK8A4ZY9WOuGg95P264FgzMQl8d7Ux8d095GUurg==
+"@react-page/editor@^5.4.3":
+  version "5.4.3"
+  resolved "https://registry.yarnpkg.com/@react-page/editor/-/editor-5.4.3.tgz#796d691aee3b5a3ac4cb5d720771bf76e8bfb5af"
+  integrity sha512-ptLVcU1vxKI17SM8YdycSexrV6BrkJd87JNLwpPY11r4bGCjOZoxwZb/k1Lh5FizngQmKDigUsqfAzeXqjP9WQ==
   dependencies:
     "@mui/icons-material" "^5.8.0"
     "@mui/material" "^5.8.1"
@@ -416,45 +416,45 @@
     uniforms "^2.6.0 || ^3.0.0"
     uniforms-bridge-json-schema "^2.6.0 || ^3.0.0"
 
-"@react-page/plugins-background@^5.4.2":
-  version "5.4.2"
-  resolved "https://registry.yarnpkg.com/@react-page/plugins-background/-/plugins-background-5.4.2.tgz#7968d1b07aadc0dbfac7701da74d96eb000c448e"
-  integrity sha512-CCMeIDCg7785odBYygo8G8WDXBSsDYAVpHFzj4Apcq9y7uoCUsn+FHgXNXcPHd1tpePK75ouvmEr0i7Db7yNVQ==
+"@react-page/plugins-background@^5.4.3":
+  version "5.4.3"
+  resolved "https://registry.yarnpkg.com/@react-page/plugins-background/-/plugins-background-5.4.3.tgz#f692f1f7badd9017eba1f493c25d43a94b18f527"
+  integrity sha512-PeTUurwwyv6RYZdCu0t58AUYhkD5cuENi9lulJHM3E4uVBtgUsrVkNTrShQu2Bw5vgH5pcbAzIgG9NdhnLVBng==
   dependencies:
     "@mui/icons-material" "^5.8.0"
-    "@react-page/editor" "^5.4.2"
+    "@react-page/editor" "^5.4.3"
 
-"@react-page/plugins-divider@^5.4.2":
-  version "5.4.2"
-  resolved "https://registry.yarnpkg.com/@react-page/plugins-divider/-/plugins-divider-5.4.2.tgz#e533747fce2fadc0ed3d637a4371868e51fef77b"
-  integrity sha512-mnR8yYlc52gF08+RIaYi9o9O/+0yYsrOzWa98rj+lT95x41avKEiCkfLXzLqwmZP+OMOt9jiLFQsnNZ6rqOGIw==
+"@react-page/plugins-divider@^5.4.3":
+  version "5.4.3"
+  resolved "https://registry.yarnpkg.com/@react-page/plugins-divider/-/plugins-divider-5.4.3.tgz#0518a18aa8ec93f9209a0f486a180d410270eee0"
+  integrity sha512-trLMYW4w1/D+EmCsgoqnz4vRsG9C3BS5/Fweo8WMGL70sjnefoDwcXvOA2UfaaOH+KUv1F61pBJSDwugdUQyPA==
   dependencies:
     "@mui/icons-material" "^5.8.0"
-    "@react-page/editor" "^5.4.2"
+    "@react-page/editor" "^5.4.3"
 
-"@react-page/plugins-html5-video@^5.4.2":
-  version "5.4.2"
-  resolved "https://registry.yarnpkg.com/@react-page/plugins-html5-video/-/plugins-html5-video-5.4.2.tgz#f0e5db5bed4d9ddf3935ff261dbb4c444e438447"
-  integrity sha512-bp4bUNtUw26f9gAX1BH3BQdEyZLMdb/38sWI9A43oT/dv+3jn57fH3Or4ch01iUx2vXbP3RdvvoEY4Q0GvnibA==
+"@react-page/plugins-html5-video@^5.4.3":
+  version "5.4.3"
+  resolved "https://registry.yarnpkg.com/@react-page/plugins-html5-video/-/plugins-html5-video-5.4.3.tgz#11f32a84397cc534c79cf50f8243e837bd2fd62a"
+  integrity sha512-nWeOISZ6N2ZM5mAb0S4Wkd4fkipruq4Q8tPnCKpfsJ6G69eqIiAUSiuj7pRZ6rLdvx7cLHtX9MTC1GTMHuAsAA==
   dependencies:
-    "@react-page/editor" "^5.4.2"
+    "@react-page/editor" "^5.4.3"
 
-"@react-page/plugins-image@^5.4.2":
-  version "5.4.2"
-  resolved "https://registry.yarnpkg.com/@react-page/plugins-image/-/plugins-image-5.4.2.tgz#f8e76ef6e0f8b8ac837c9ddac61c2e0ddb35054b"
-  integrity sha512-guFZtPFoMVvPzqiM8EHpsLHt5l8zdDLyQWN804RY11gI9M18XTf9o3flRLCa3IZCzn/z5mxUTo+ITYWhJnoE4Q==
+"@react-page/plugins-image@^5.4.3":
+  version "5.4.3"
+  resolved "https://registry.yarnpkg.com/@react-page/plugins-image/-/plugins-image-5.4.3.tgz#f32040ec6912c815b1b39531b2dda22ad99e8b61"
+  integrity sha512-bSwKd+2U5p/E4heMtpQ60VKzt/LLnk8kLumjSpKrsFr3954mhEKt35n7rSK9vcEt8sqj3ncMirtWCZ0Yp59lCg==
   dependencies:
     "@mui/icons-material" "^5.8.0"
-    "@react-page/editor" "^5.4.2"
+    "@react-page/editor" "^5.4.3"
 
-"@react-page/plugins-slate@^5.4.2":
-  version "5.4.2"
-  resolved "https://registry.yarnpkg.com/@react-page/plugins-slate/-/plugins-slate-5.4.2.tgz#9ed685887195135afff50429109b3af5fd28316d"
-  integrity sha512-0drY2BY6fKO8KdpqcC89xMepIJcvZPwmE8yffN02mttm87GyKoaBQT5fTFnZ7iz56YhyOXbmcabPW2tAdPJdiQ==
+"@react-page/plugins-slate@^5.4.3":
+  version "5.4.3"
+  resolved "https://registry.yarnpkg.com/@react-page/plugins-slate/-/plugins-slate-5.4.3.tgz#7ab22bac25f87febc6c48e003ea83d4b603bc68f"
+  integrity sha512-pjB4t93qi3vTRWqIhPRPrgZKuNeX3TwkannNMx57hfX/wAJH0L7EtTyr2KiS0vJMJDQwSdwYfLGVlsfxdteVRQ==
   dependencies:
     "@emotion/is-prop-valid" "^1.2.0"
     "@mui/icons-material" "^5.8.0"
-    "@react-page/editor" "^5.4.2"
+    "@react-page/editor" "^5.4.3"
     "@xmldom/xmldom" "^0.8.1"
     cssstyle "^2.3.0"
     deep-rename-keys "^0.2.1"
@@ -472,23 +472,23 @@
     slate-react "^0.79.0"
     slate-react-presentation "^0.1.1"
 
-"@react-page/plugins-spacer@^5.4.2":
-  version "5.4.2"
-  resolved "https://registry.yarnpkg.com/@react-page/plugins-spacer/-/plugins-spacer-5.4.2.tgz#715dd62c6539435a6e46aef473f1b7eaf6ec8e82"
-  integrity sha512-AG+tYaSwNy8SMH79h5+wxR2AWm8Q1A9qNvp0Vx+2FejWhyzZ3L70dcJd95vfM+2+BpA3ktQgCQ3zAFqch1RhgA==
+"@react-page/plugins-spacer@^5.4.3":
+  version "5.4.3"
+  resolved "https://registry.yarnpkg.com/@react-page/plugins-spacer/-/plugins-spacer-5.4.3.tgz#ceedebc75e0242028c313ca333351200a285077e"
+  integrity sha512-RT73KbcJeJ0ftWwjghh2IyRr7xD32l2lKjVVZxAc9KbBZ2bDlRoePVDzj2aLYxyME1UIUz/IqEneI3ni1T1Hkg==
   dependencies:
     "@mui/icons-material" "^5.8.0"
-    "@react-page/editor" "^5.4.2"
+    "@react-page/editor" "^5.4.3"
     classnames "2.2.6"
     react-resizable "^3.0.4"
 
-"@react-page/plugins-video@^5.4.2":
-  version "5.4.2"
-  resolved "https://registry.yarnpkg.com/@react-page/plugins-video/-/plugins-video-5.4.2.tgz#c5a204782fbcec6e4f7a68d684696fc5a41b16eb"
-  integrity sha512-eYYeqyL4eQGCAGFXyJ8ocLaeXdch6NX9a+NcrZKnZLQ9vHDuK5XOOn6Fzp/rkFwOHzbhYYmFdjfRj6DnB2ChqQ==
+"@react-page/plugins-video@^5.4.3":
+  version "5.4.3"
+  resolved "https://registry.yarnpkg.com/@react-page/plugins-video/-/plugins-video-5.4.3.tgz#f6ffebca5614ce6bc6aebc888659b60c18b5d1e2"
+  integrity sha512-nsi3/PKH/H54pzkFHn7fIjAcHTlC+RdG7nrM9xuA0xbnjUcWtjm21+7UvlXyBCRWx9qQI21ya3MgZ3fGMn5TfQ==
   dependencies:
     "@mui/icons-material" "^5.8.0"
-    "@react-page/editor" "^5.4.2"
+    "@react-page/editor" "^5.4.3"
     react-player "^2.10.1"
 
 "@types/hoist-non-react-statics@*", "@types/hoist-non-react-statics@^3.3.0":
